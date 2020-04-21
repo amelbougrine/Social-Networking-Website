@@ -54,5 +54,22 @@ if(isset($_POST["reg_user"])) {
     $dateofbirth = $_POST['dateofbirth'];
     // gender
     $gender = $_POST['gender'];
+
+    if ($email == $email2) {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $email = filter_var($email, FILTER_VALIDATE_EMAIL); 
+            $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$email'"); 
+            $num_rows = mysqli_num_rows($e_check);
+            if ($num_rows > 0) {
+                array_push($error_array, "Email already in use");
+            }
+        } else{
+            array_push($error_array, "Email is invalid format");
+        }   
+    } else{
+        array_push($error_array, "Email doesn't match");
+    }
+    
+    $user_check = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
 }
 ?>
