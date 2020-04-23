@@ -2,49 +2,58 @@
 <html lang="en">
 
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/style.css">
     </head>
-    <body class="bg-secondary">
-        <!-- header -->
-        <nav class="navbar bg-warning sticky-top">
-            <div class="container-fluid paddin">
-                <a href="#" class="navbar-brand"><img src="images/logo.png" alt="Logo"></a>
-            </div>
-        </nav>
-        <!-- Welcome -->
-        <div class="container-fluid padding">
-            <div class="row welcome text-center">
-                <div class="col-12">
-                    <h1 class="text-white display-4">Welcome</h1>
-                </div>
-                <hr>
-            </div>
-        </div>
-        <!-- Cards -->
-        <div class="container-fluid padding">
-            <div class="row padding">
-                <div class="col-md-6">
-                    <div class="card bg-warning">
-                        
-                        <div class="card-body">
-                            <h4 class="card-title">Log in</h4>
-                            <p class="card-text"> Please inter your E-mail and Password.</p>
-                            <a href="#" class="btn btn-outline-secondary">Log in</a>
+    <body>
+        <!-- Top content -->
+        <div class="top-content text-light">	
+            <div class="inner-bg">
+                <div class="container">	
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1>Create an account. It's free to register!</h1>
+                            <div class="description">
+                                <p>Sign up and start sharing your photos and updates with your friends.
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">    	
+                        	<div class="form-box">
+	                        	<div class="form-top">
+	                        		<div class="form-top-left">
+	                        			<h3>Login to our site</h3>
+	                            		<p>Enter Email and password to log on:</p>
+	                        		</div>
+	                        		<div class="form-top-right">
+	                        			<i class="fa fa-lock"></i>
+	                        		</div>
+	                            </div>
+	                            <div class="form-bottom">
+				                    <form action="login.php" method="POST" class="login-form">
+                                       <!-- Email Addresss -->
+                                        <div class="form-group">
+                                            <label class="sr-only" for="form-email">Email Address</label>
+                                            <input type="text" name="log_email" placeholder="Email Address" class="form-email form-control" required>
+                                        </div>
+                                        <!-- Password -->
+                                        <div class="form-group">
+				                            <label class="sr-only" for="form-password">Password</label>
+                                            <input type="password" name="log_password" placeholder="Password" class="form-password form-control" required>
+                                        </div>
+                                        <button class="btn" type="submit" name="login_button">Sign in!</button>
+                                    </form>     
+			                    </div>
+		                    </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="card bg-warning">
-                        
-                        <div class="card-body">
-                            <h4 class="card-title">Sign Up</h4>
-                            <p class="card-text">Please complite the form bellow.</p>
-                            <a href="#" class="btn btn-outline-secondary">Signe up</a>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </div>
+        </div>                         
     </body>
 </html>

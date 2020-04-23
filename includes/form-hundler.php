@@ -55,10 +55,10 @@ if(isset($_POST["reg_user"])) {
     // gender
     $gender = $_POST['gender'];
 
-    if ($email == $email2) {
-        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $email = filter_var($email, FILTER_VALIDATE_EMAIL); 
-            $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$email'"); 
+    if ($email1 == $email2) {
+        if (filter_var($email1, FILTER_VALIDATE_EMAIL)) {
+            $email1 = filter_var($email1, FILTER_VALIDATE_EMAIL); 
+            $e_check = mysqli_query($con, "SELECT email FROM users WHERE email='$email1'"); 
             $num_rows = mysqli_num_rows($e_check);
             if ($num_rows > 0) {
                 array_push($error_array, "Email already in use");

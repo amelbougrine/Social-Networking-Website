@@ -1,5 +1,21 @@
+body {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
-
+.card {
+    width: 24rem;
+    margin: 0 auto;
+}
+.card2 {
+    width: 30rem;
+}
+.card-header {
+    height: 4rem;
+    background-color: #d8bfd8;
+}
 /* .register {
     margin: 0 115px;
     margin-top: 40px;
