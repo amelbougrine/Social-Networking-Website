@@ -1,3 +1,9 @@
+<?php
+
+include 'database/config.php';
+include 'includes/form-handlers.php';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,10 +70,102 @@
 	                        			<i class="fa fa-lock"></i>
 	                        		</div>
 	                            </div>
-	                            
+                                <div class="form-bottom">
+				                    <form action="register.php" method="POST" class="registration-form">
+                                         <!-- First Name -->
+                                         <div class="form-group">
+				                    		<label class="sr-only">First name</label>
+                                            <input class="form-first-name form-control" type="text" name="reg_fname" placeholder="First Name" value="<?php if (isset($_SESSION['reg_fname'])) {
+                                                echo $_SESSION['reg_fname'];
+                                            } ?>" required>
+				                        </div>
+				                        
+				                        <!-- Last Name -->
+				                        <div class="form-group">
+				                        	<label class="sr-only">Last name</label>
+                                            <input class="form-last-name form-control" type="text" name="reg_lname" placeholder="Last Name" value= "<?php if (isset($_SESSION['reg_lname'])) {
+                                                echo $_SESSION['reg_lname'];
+                                            } ?>" required>
+				                        </div>
+				                    
+                                        <!-- Username -->
+				                        <div class="form-group">
+				                        	<label class="sr-only">Username</label>
+                                            <input class="form-username form-control" type="text" name="username" placeholder="Username (Cannot be changed)" value="<?php if (isset($_SESSION['username'])) {
+                                                echo $_SESSION['username'];
+                                            } ?>" required>
+                                            <?php
+                                                if(in_array("Username already exists", $error_array)) echo "Username already exists";
+                                                else if(in_array("Username must be between 2 and 20", $error_array)) echo "Username must be between 2 and 20";
+                                                else if(in_array("You username can only contain english characters or numbers", $error_array)) echo "You username can only contain english characters or numbers";
+                                            ?>
+                                        </div>
+
+                                        <!-- Email -->
+                                        <div class="form-group">
+                                            <label class="sr-only">Email</label>
+                                            <input class="form-email form-control" type="text" name="reg_email" placeholder="Email" value="<?php if (isset($_SESSION['reg_email'])) {
+                                                echo $_SESSION['reg_email'];
+                                            } ?>" required>
+                                        </div>
+
+                                        <!-- Confirm Email -->
+                                        <div class="form-group">
+                                            <label class="sr-only">Confirm Email</label>
+                                            <input class="form-confirm-email form-control" type="text" name="reg_email2" placeholder="Confirm Email" value="<?php if (isset($_SESSION['reg_email2'])) {
+                                                echo $_SESSION['reg_email2'];
+                                            } ?>" required>
+                                            <?php
+                                            if (in_array("Email already in use", $error_array)) echo "Email already in use";
+                                            else if (in_array("Email is invalid format", $error_array)) echo "Email is invalid format";
+                                            else if (in_array("Email doesn't match", $error_array)) echo "Email doesn't match";
+                                            ?>
+                                        </div>
+                                        
+                                        <!-- Password -->
+                                        <div class="form-group">
+                                            <label class="sr-only">Password</label>
+                                            <input class="form-password form-control" type="password" name="reg_password" placeholder="Password" required>
+                                        </div>                 
+                                           
+                                        <!-- Confirm Password -->
+                                        <div class="form-group">
+                                            <input class="form-confirm-password form-control" type="password" name="reg_password2" placeholder="Confirm Password" required>
+                                        </div>
+                                        
+                                        <!-- Gender -->
+                                        <div class="form-group" style="float:left; color:#DCDCDC">
+                                            <label class="sr-only">Gender</label>
+                                            <tr>
+                                                <td>Gender &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="Male" <?php if (isset($_POST['gender']) && $_POST['gender'] == "Male"){
+                                                ?> checked <?php
+                                                } ?> required> Male &nbsp;
+                                                <input type="radio" name="gender" value="Female" <?php if (isset($_POST['gender']) && $_POST['gender'] == "Female"){
+                                                ?> checked <?php
+                                                } ?> required> Female
+                                                </td>
+                                            </tr>
+                                        </div>  
+                        
+                                        <!-- Birthday -->
+                                        <br><div class="form-group" style="float:left; margin-right:35%; color:#DCDCDC">      
+                                            <label class="sr-only">Birthday</label>
+                                            <tr>
+                                                <td>Birthday
+                                                &nbsp;&nbsp;
+                                                <input type="date" name="dob" requred>
+                                                </td>
+                                            </tr>
+                                        </div><br>
+                                        
+                                        <br>
+                           
+                                        <!-- Submit Button -->
+                                        <button type="submit" name="reg_user" class="btn btn-primary">Sign me up!</button>         
+                                    </form>
+                                </div>
 			                </div>
-                        </div>
-                        	
+                        </div> 	
                     </div>
                 </div>
             </div>
