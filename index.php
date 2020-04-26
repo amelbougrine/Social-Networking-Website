@@ -1,15 +1,12 @@
 <?php
-
 include 'database/config.php';
-include 'includes/form-handlers.php';
-
+include 'includes/form_handlers/register_handler.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
@@ -71,7 +68,7 @@ include 'includes/form-handlers.php';
 	                        		</div>
 	                            </div>
                                 <div class="form-bottom">
-				                    <form action="register.php" method="POST" class="registration-form">
+				                    <form action="index.php" method="POST" class="registration-form">
                                          <!-- First Name -->
                                          <div class="form-group">
 				                    		<label class="sr-only">First name</label>
@@ -79,7 +76,6 @@ include 'includes/form-handlers.php';
                                                 echo $_SESSION['reg_fname'];
                                             } ?>" required>
 				                        </div>
-				                        
 				                        <!-- Last Name -->
 				                        <div class="form-group">
 				                        	<label class="sr-only">Last name</label>
@@ -87,7 +83,6 @@ include 'includes/form-handlers.php';
                                                 echo $_SESSION['reg_lname'];
                                             } ?>" required>
 				                        </div>
-				                    
                                         <!-- Username -->
 				                        <div class="form-group">
 				                        	<label class="sr-only">Username</label>
@@ -100,15 +95,13 @@ include 'includes/form-handlers.php';
                                                 else if(in_array("You username can only contain english characters or numbers", $error_array)) echo "You username can only contain english characters or numbers";
                                             ?>
                                         </div>
-
                                         <!-- Email -->
                                         <div class="form-group">
                                             <label class="sr-only">Email</label>
-                                            <input class="form-email form-control" type="text" name="reg_email" placeholder="Email" value="<?php if (isset($_SESSION['reg_email'])) {
-                                                echo $_SESSION['reg_email'];
+                                            <input class="form-email form-control" type="text" name="reg_email1" placeholder="Email" value="<?php if (isset($_SESSION['reg_email1'])) {
+                                                echo $_SESSION['reg_email1'];
                                             } ?>" required>
                                         </div>
-
                                         <!-- Confirm Email -->
                                         <div class="form-group">
                                             <label class="sr-only">Confirm Email</label>
@@ -120,19 +113,16 @@ include 'includes/form-handlers.php';
                                             else if (in_array("Email is invalid format", $error_array)) echo "Email is invalid format";
                                             else if (in_array("Email doesn't match", $error_array)) echo "Email doesn't match";
                                             ?>
-                                        </div>
-                                        
+                                        </div> 
                                         <!-- Password -->
                                         <div class="form-group">
                                             <label class="sr-only">Password</label>
-                                            <input class="form-password form-control" type="password" name="reg_password" placeholder="Password" required>
-                                        </div>                 
-                                           
+                                            <input class="form-password form-control" type="password" name="reg_password1" placeholder="Password" required>
+                                        </div>                   
                                         <!-- Confirm Password -->
                                         <div class="form-group">
                                             <input class="form-confirm-password form-control" type="password" name="reg_password2" placeholder="Confirm Password" required>
                                         </div>
-                                        
                                         <!-- Gender -->
                                         <div class="form-group" style="float:left; color:#DCDCDC">
                                             <label class="sr-only">Gender</label>
@@ -145,21 +135,20 @@ include 'includes/form-handlers.php';
                                                 } ?> required> Female
                                                 </td>
                                             </tr>
-                                        </div>  
-                        
+                                        </div>                         
                                         <!-- Birthday -->
-                                        <br><div class="form-group" style="float:left; margin-right:35%; color:#DCDCDC">      
+                                        <br>
+                                        <div class="form-group" style="float:left; margin-right:35%; color:#DCDCDC">      
                                             <label class="sr-only">Birthday</label>
                                             <tr>
                                                 <td>Birthday
                                                 &nbsp;&nbsp;
-                                                <input type="date" name="dob" requred>
+                                                <input type="date" name="dob" required>
                                                 </td>
                                             </tr>
-                                        </div><br>
-                                        
-                                        <br>
-                           
+                                        </div>
+                                        <br>                                        
+                                        <br>                       
                                         <!-- Submit Button -->
                                         <button type="submit" name="reg_user" class="btn btn-primary">Sign me up!</button>         
                                     </form>
@@ -169,6 +158,16 @@ include 'includes/form-handlers.php';
                     </div>
                 </div>
             </div>
-        </div>                         
+        </div> 
+        <footer>
+        	<div class="container">
+        		<div class="row">	
+        			<div class="col-sm-8 col-sm-offset-4">
+        				<div class="footer-border"></div>
+        				<p>2020 Made with Passion | Amel Bougrine &nbsp;<i class="fas fa-copyright"></i></p>
+        			</div>
+        		</div>
+        	</div>
+        </footer>                        
     </body>
 </html>
