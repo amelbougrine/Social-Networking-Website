@@ -89,5 +89,24 @@ if(isset($_POST["reg_user"])) {
     if(strlen($lname) > 25 || strlen($lname) < 2){
         array_push($error_array, "Your last name must be between 2 and 25 characters");
     }
+    // password validation
+    if(preg_match('/[^A-Za-z0-9]/', $password1)){
+        array_push($error_array, "Password can only contain english characters or numbers");
+    } else if(strlen($password1 > 30 || strlen($password1) < 5)){
+            array_push($error_array, "Password must be between 5 and 30 characters or numbers"); 
+        }
+    if($password1 != $password2){
+        array_push($error_array, "Passwords don't match");
+    }
+    // profile picture
+    if(empty($error_array)){ 
+        $password1 = md5($password1);
+        if($gender == "Male"){
+            $profile_pic = "assets/images/male.png";
+        }
+        if($gender == "Female"){
+            $profile_pic = "assets/images/female.png";
+        }
+    }
 }
 ?>
