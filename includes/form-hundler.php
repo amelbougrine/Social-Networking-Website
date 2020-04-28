@@ -54,7 +54,7 @@ if(isset($_POST["reg_user"])) {
     $dateofbirth = $_POST['dateofbirth'];
     // gender
     $gender = $_POST['gender'];
-
+    // email validation
     if ($email1 == $email2) {
         if (filter_var($email1, FILTER_VALIDATE_EMAIL)) {
             $email1 = filter_var($email1, FILTER_VALIDATE_EMAIL); 
@@ -69,7 +69,7 @@ if(isset($_POST["reg_user"])) {
     } else{
         array_push($error_array, "Email doesn't match");
     }
-    
+    // username validation
     $user_check = mysqli_query($con, "SELECT username FROM users WHERE username='$username'");
     $num_rows = mysqli_num_rows($user_check); 
     if($num_rows > 0){
@@ -80,6 +80,14 @@ if(isset($_POST["reg_user"])) {
     }        
     else if(preg_match('/[^A-Za-z0-9]/', $username)){
         array_push($error_array, "You username can only contain english characters or numbers");
+    }
+    // fname validation
+    if(strlen($fname) > 25 || strlen($fname) < 2){
+        array_push($error_array, "Your first name must be between 2 and 25 characters");
+    }
+    // lname validation
+    if(strlen($lname) > 25 || strlen($lname) < 2){
+        array_push($error_array, "Your last name must be between 2 and 25 characters");
     }
 }
 ?>
