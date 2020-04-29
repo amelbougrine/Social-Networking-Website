@@ -98,7 +98,7 @@ if(isset($_POST["reg_user"])) {
     if($password1 != $password2){
         array_push($error_array, "Passwords don't match");
     }
-    // profile picture
+    // create profile
     if(empty($error_array)){ 
         $password1 = md5($password1);
         if($gender == "Male"){
@@ -107,6 +107,10 @@ if(isset($_POST["reg_user"])) {
         if($gender == "Female"){
             $profile_pic = "assets/images/female.png";
         }
+        $query = "INSERT INTO users (first_name, last_name, username, email, dateofbirth, gender, password, signup_date, profile_pic, cover_pic, num_posts, num_likes, user_closed, friend_array, address, city, hometown, country, mobile, phone, work) VALUES ('$fname', '$lname', '$username', '$email1', '$dateofbirth', '$gender', '$password1', '$date', '$profile_pic', '$cover_pic', '0', '0', 'no', ',', '$address', '$city', '$hometown', '$country', NULL, NULL, '$work')";
+        mysqli_query($con, $query);
+        $_SESSION['username'] = $username;
+        header('location: index.php');
     }
 }
 ?>
