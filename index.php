@@ -1,6 +1,7 @@
 <?php
 include 'database/config.php';
 include 'includes/form-handler.php';
+include 'includes/register-handler.php';
 ?>
 
 <!DOCTYPE html>
