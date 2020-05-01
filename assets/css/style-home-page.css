@@ -1,0 +1,11 @@
+.header_bar{
+    width:100%;
+    min-width: 1050px;
+    height: 55px;
+    background-color: white;
+    margin: 0 0 10px -8px;
+    display: inline-flex;
+    position: fixed;
+    box-shadow: 1px 1px 1px #000000;
+    z-index: 10;
+}
