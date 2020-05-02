@@ -1,3 +1,7 @@
+@font-face{
+    font-family: 'Bellota-Bold';
+    src: url('../fonts/Bellota-Bold.otf');
+}
 .header_bar{
     width:100%;
     min-width: 1050px;
@@ -8,4 +12,46 @@
     position: fixed;
     box-shadow: 1px 1px 1px #000000;
     z-index: 10;
+}
+body{
+    line-height: 17px;
+    background-color: #EEEEEE;
+}
+a{
+    color: #006AFF;
+}
+a:hover{
+    color:#006AFF;
+}
+.nav-center{
+    float: left;
+    position: absolute;
+    margin: 10px;
+    margin-left: 50%
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+    font-family: 'Bellota-Bold', sans-serif;
+    font-size: 17px;
+    color: black;
+    text-align: center;
+}
+.dropdown img{
+    width: 45px;
+    margin-top: -5px;
+    border-radius: 50px;
+}
+.dropdown-content{
+    display:none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    padding: 12px 16px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-family: 'Bellota-Bold', sans-serif;
+}
+.dropdown:hover .dropdown-content{
+    display: block;
 }
