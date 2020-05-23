@@ -25,17 +25,24 @@ if(isset($_SESSION['username'])){
                     <span><img src="<?php echo $user['profile_pic']; ?>"></span>
                     <div class="dropdown-content">
                         <div class="dropdown-a">
-                            <h5><a href="<?php echo $userLoggedIn; ?>"><?php echo $user ['username']?></a></h5>
+                            <h5><a href="<?php echo $userLoggedIn; ?>"><i style="color:#3875c5;" class="fas fa-user"></i>
+                                <?php echo $user ['username']?></a>
+                            </h5>
                             <hr>
-                            <a href="requests.php">Requests</a>
-                             <hr>
-                            <a href="account_settings.php">Settings</a><br><br>
-                            <a href="includes/handlers/logout.php">Logout</a>
+                            <a href="requests.php"><i style="color:#3875c5;" class="fas fa-users"></i>&nbsp;Requests</a>
+                            <hr>
+                            <a href="account_settings.php"><i style="color:#3875c5;" class="fas fa-cog"></i>&nbsp;Settings</a><br><br>
+                            <a href="includes/handlers/logout.php"><i style="color:#3875c5;" class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
                         </div>
                     </div> 
                     <?php echo $user['first_name']; ?><?php echo "!";?> 
                 </div>
             </div>
+            <nav>
+                <a href="index.php"><i style="color: #3875C5;" class="fas fa-home"></i>&nbsp;Home</a>&nbsp;&nbsp;
+                <a href=""><i style="color: #3875C5;" class="fas fa-envelope"></i>&nbsp;Messages</a>&nbsp;&nbsp;
+                <a href=""><i style="color: #3875C5;" class="fas fa-bell"></i>&nbsp;Notifications</a>
+          </nav>
         </div>
     </body>
 </html>

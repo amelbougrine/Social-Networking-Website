@@ -55,3 +55,23 @@ a:hover{
 .dropdown:hover .dropdown-content{
     display: block;
 }
+nav{
+    float: right;
+    position: absolute;
+    text-decoration: none;
+    right: 1px;
+    margin: 18.5px;
+}
+nav a{
+    position: relative;
+    color: black;
+    font-size: 17px;
+    font-family: 'Bellota-Bold', sans-serif;
+    text-decoration: none;
+}
+nav a:hover{
+    text-decoration: none;
+    width: 50%;
+    border-bottom: 1px solid black;
+    color: black;
+}
