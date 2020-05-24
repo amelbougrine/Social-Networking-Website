@@ -75,3 +75,73 @@ nav a:hover{
     border-bottom: 1px solid black;
     color: black;
 }
+.wrapper{
+    margin: 0 auto;
+    top: 53px;
+    position: relative;
+    padding: 0 10px;
+    width: 75%;
+    min-width: 950px;
+}
+.info-box{
+    width: 35%;
+    min-height: 170px;
+    float: left;
+    background: #fff;
+    border-radius: 5px;
+    overflow: auto;
+    border: 1px solid #e3e3e3;
+    margin-top: 30px;
+}
+.info-inner{
+    overflow: hidden;
+}
+.info-in-head{
+    width: 100%;
+    background-color: #fff;
+    background-size: cover;
+    border-bottom: 1px solid #e3e3e3;
+    overflow: hidden;
+    height: 100px;
+}
+.info-in-head img {
+    width: 100%;
+    height: 100%;
+}
+.info-in-body{
+    position: relative;
+    height: 70px;
+    top: -40px;
+}
+.in-b-img{
+    width: 70px;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 70px;
+    top: 15px;
+    left: 10px;
+    margin-right: 15px;
+}
+.in-b-img img{
+    width: 100%;
+    height: 100%;
+}
+.info-body-name{
+    width: 75%;
+    position: relative;
+    top: 50px;
+    left: 8px;
+}
+.in-b-name div a{
+    font-size: 15px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+}
+.in-b-name div a:hover{
+    text-decoration: underline;
+}
