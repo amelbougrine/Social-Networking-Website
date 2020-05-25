@@ -28,6 +28,28 @@
                     </div>
                 </div>
             </div>
+            <div class="info-in-footer">
+                <div class="number-wrapper">
+                    <div class="num-box">
+                        <div class="num-head">
+                            POSTS
+                        </div>
+                        <div class="num-body">
+                            <?php echo $user['num_posts']; ?>
+                        </div>
+                    </div>
+                    <div class="num-box">
+                        <div class="num-head">
+                            LIKES
+                        </div>
+                        <div class="num-body">
+                            <span class="count-likes">
+                                <?php echo $user['num_likes']; ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

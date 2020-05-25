@@ -145,3 +145,34 @@ nav a:hover{
 .in-b-name div a:hover{
     text-decoration: underline;
 }
+.in-b-name span small a{
+    text-decoration: none;
+    color: #7D7D7D;
+    font-size: 12px;
+}
+.info-in-footer{
+    width: 100%;
+    position: relative;
+    top: -15px;
+}
+.number-wrapper{
+    width: 96%;
+    overflow: hidden;
+    float: right;
+}
+.num-box{
+    width: 78px;
+    height: auto;
+    float: left;
+}
+.num-head{
+    font-size: 10px;
+    color: #9b9b9b;
+}
+.num-body{
+    font-size: 18px;
+    color: #3875C5;
+}
+
+
+
