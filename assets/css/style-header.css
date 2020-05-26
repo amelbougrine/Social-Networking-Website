@@ -173,6 +173,88 @@ nav a:hover{
     font-size: 18px;
     color: #3875C5;
 }
+.post-wrap{
+    width: 50%;
+    height: 160px;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #d5d8d4;
+    float: left;
+    margin-top: 30px;
+    position: relative;
+    margin-left: 20px;
+}
+.post-inner{
+    overflow: auto;
+}
+.post-h-left{
+    width: 15%;
+    float: left;
+    margin-top: 18px;
+}
+.post-h-img{
+    width: 40px;
+    height: 40px;
+    float: right;
+    overflow: hidden;
+    border-radius: 4px;
+    margin: 0px 5px;
+}
+.post-h-img img{
+    width: 100%;
+    height: 100%;
+}
+.post-body{
+    width: 82%;
+    float: left;
+    margin: 15px 0px;
+}
+.post-body textarea{
+    overflow: hidden;
+    resize: none;
+    width: 95%;
+    height: 60px;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+}
+.post-footer{
+    width: 85%;
+    float: right;
+    overflow: hidden;
+}
+.p-fo-left{
+    width: 50%;
+    float: left;
+    margin-left: -35px;
+}
+.p-fo-left label{
+    font-size: 25px;
+    color: #83b476;
+    text-decoration: none;
+}
+.p-fo-left input[type="file"]{
+    display: none;
+}
+.p-fo-left a:hover{
+    color:#64d547;
+}
+.p-fo-right{
+    width: 25%;
+    float: right;
+    color: #727171;
+    margin-right: 30px;
+}
+.p-fo-right input[type="submit"]{
+    padding: 5px 10px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3875C5;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 40px;
+}
 
 
 
