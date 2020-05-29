@@ -1,4 +1,16 @@
-<?php include 'header.php'; ?>
+<?php include 'header.php'; 
+if(isset($_POST['post'])){
+    $uploadOk = 1;
+    $errorMessage = "";  
+    if($uploadOk){
+        $post = new Post($con, $userLoggedIn);
+        $post->submitPost($_POST['post_text'], 'none', $imageName);
+    }
+    else{
+        echo "<div style='text-align: center;' class='alert alert-danger'> $errorMessage </div>";
+    }
+}
+?>
 <style type="text/css">
     .wrapper{
         width:75%;
